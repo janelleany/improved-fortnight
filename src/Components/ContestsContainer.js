@@ -3,7 +3,7 @@ import '../styles/ContestsContainer.css';
 
 let ContestsContainer = () => {
   return (
-      <div className="ContestsContainer">
+      <div className="contests-container">
         <p>The ContestsContainer Component has rendered.</p>
       </div>
     );

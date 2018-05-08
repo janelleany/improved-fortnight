@@ -2,17 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+
+import artists from './json/artists';
+import canvases from './json/canvases';
+import contests from './json/contests';
+import submissions from './json/submissions';
 
 let initialState = {
     isLoggedIn: false,
     currentUser: {},
-    canvasList: [],
-    artistList: [],
-    contestList: [],
-    submissionList: []
+    canvasList: canvases,
+    artistList: artists,
+    contestList: contests,
+    submissionList: submissions
 }
 
 let reducer = (state = initialState, action) => {

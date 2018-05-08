@@ -6,10 +6,11 @@ import HomepageLoginScreen from './Screens/HomepageLoginScreen';
 import ContestsScreen from './Screens/ContestsScreen';
 import SingleContestScreen from './Screens/SingleContestScreen';
 
+
 let App = () => {
   return (
     <Router>
-      <div>
+      <div className="router">
         <Route path="/" exact component={HomepageScreen}/>
         <Route path="/login" component={HomepageLoginScreen}/>
         <Route path="/contests" exact component={ContestsScreen}/>

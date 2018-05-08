@@ -1,9 +1,14 @@
 import React from 'react';
 
-let SingleContestScreen = () => {
+import Header from '../Components/Header';
+import Contest from '../Components/Contest';
+
+let SingleContestScreen = (props) => {
     return (
         <div>
-            <p>The SingleContestScreen has rendered</p>
+            <p>The SingleContestScreen has rendered. It contains:</p>
+            <Header path={props.match.path}/>
+            <Contest />
         </div>
     );
 }
