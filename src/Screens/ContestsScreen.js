@@ -1,41 +1,47 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import Header from '../Components/Header';
 import ContestsButtons from '../Components/ContestsButtons';
 import ContestsContainer from '../Components/ContestsContainer';
 
+let mapPropstoState = (state) => {
+    return {allContests: state.contestList}
+}
 
-let ContestsScreen = (props) => {
-    if (props.match.path === '/new/contest') {
+
+let ContestsScreen = ({allContests, match}) => {
+    let path = match.path;
+    if (path === '/new/contest') {
         return (
             <div className="contests-screen">
                 <p>The ContestsScreen has rendered. And it contains:</p>
-                <Header path={props.match.path}/>
+                <Header path={path}/>
                 <ContestsButtons />
-                <ContestsContainer />
+                <ContestsContainer allContests={allContests}/>
                 <p>The NewContest component has rendered in the foreground</p>
             </div>
         );
-    } else if (props.match.path === '/new/submission') {
+    } else if (path === '/new/submission') {
         return (
             <div className="contests-screen">
                 <p>The ContestsScreen has rendered. And it contains:</p>
-                <Header path={props.match.path}/>
+                <Header path={path}/>
                 <ContestsButtons />
-                <ContestsContainer />
+                <ContestsContainer allContests={allContests}/>
                 <p>The NewSubmission component has rendered in the foreground</p>
             </div>
         );
-    } else {
-        return (
+    } else {   
+    return (
             <div className="contests-screen">
                 <p>The ContestsScreen has rendered. And it contains:</p>
-                <Header path={props.match.path}/>
+                <Header path={path}/>
                 <ContestsButtons />
-                <ContestsContainer />
+                <ContestsContainer allContests={allContests}/>
             </div>
         );
     }
 }
 
-export default ContestsScreen;
+export default connect(mapPropstoState)(ContestsScreen);

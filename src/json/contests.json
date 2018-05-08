@@ -8,6 +8,7 @@
         "type": "Free",
         "size": "Medium",
         "experience": "Old hat",
+        "zip": "30307",
         "numberOfSubmissions": "13",
         "daysLeft": "2",
         "images": [
@@ -26,6 +27,7 @@
         "type": "Free",
         "size": "Small",
         "experience": "First-timer",
+        "zip": "30324",
         "numberOfSubmissions": "7",
         "daysLeft": "5",
         "images": [
@@ -43,6 +45,7 @@
         "type": "Specific",
         "size": "Large",
         "experience": "Old hat",
+        "zip": "10472",
         "numberOfSubmissions": "6",
         "daysLeft": "4",
         "images": [
@@ -61,6 +64,7 @@
         "type": "Specific",
         "size": "Large",
         "experience": "First-timer",
+        "zip": "20833",
         "numberOfSubmissions": "19",
         "daysLeft": "1",
         "images": [
