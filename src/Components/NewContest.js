@@ -19,12 +19,10 @@ class NewContest extends React.Component {
       zip: "",
       radius: "",
       timing: "",
-      numberOfSubmissions: "",
-      daysLeft: "",
       images: [],
       canvasId: "",
-      doneEditing: false,
-      displayNext: false
+      displayNext: false,
+      doneEditing: false
     }
         
   }
@@ -44,15 +42,13 @@ class NewContest extends React.Component {
     this.setState({doneEditing: true});
   }
 
-
-
     render() {
 
       if (this.state.displayNext) {
         return (
           <div className="new-contest-container">
-            <p>I am the upload inspiration pics form</p>
-            <button onChange={this.clickDone}>Done</button>
+            <p>I am the upload inspiration pics form, and one day I'll be very pretty.</p>
+            <button onClick={this.clickDone}>Done</button>
           </div>
         );
 
@@ -137,7 +133,7 @@ class NewContest extends React.Component {
               <label>10 mi<input type="radio" name="radius" value="10" onChange={this.changeHandler} /></label>
               <label>25 mi<input type="radio" name="radius" value="25" onChange={this.changeHandler} /></label>
     
-              <label for="submit"> <input type="submit" name="submit" value="Next ==>" onChange={this.clickNext} /></label>
+              <label for="submit"> <input type="submit" name="submit" value="Next ==>" onClick={this.clickNext} /></label>
     
             </form>
           );
