@@ -10,8 +10,8 @@ let ContestsContainer = ({allContests}) => {
       {
           allContests.map(contest => {
               return (
-                  <Link to={`/contests/${contest.contestId}`}>
-                  <div key={contest.contestId} className="contest-thumbnail-container">
+                  <Link key={contest.contestId} to={`/contests/${contest.contestId}`}>
+                  <div className="contest-thumbnail-container">
                         <div className="contest-thumbnail-image-container"><img src={contest.images[0]} alt="inspiration"/></div>
                         <p>{contest.description}</p>
                         <p>Style: {contest.style}</p>

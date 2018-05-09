@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Header from '../Components/Header';
 import ContestsButtons from '../Components/ContestsButtons';
 import ContestsContainer from '../Components/ContestsContainer';
+import NewSubmission from '../Components/NewSubmission';
 
 let mapPropstoState = (state) => {
     return {allContests: state.contestList}
@@ -15,7 +16,7 @@ let ContestsScreen = ({allContests, match}) => {
     if (path === '/new/contest') {
         return (
             <div className="contests-screen">
-                <p>The ContestsScreen has rendered. And it contains:</p>
+                <p>The ContestsScreen has rendered. It contains:</p>
                 <Header path={path}/>
                 <ContestsButtons />
                 <ContestsContainer allContests={allContests}/>
@@ -29,7 +30,7 @@ let ContestsScreen = ({allContests, match}) => {
                 <Header path={path}/>
                 <ContestsButtons />
                 <ContestsContainer allContests={allContests}/>
-                <p>The NewSubmission component has rendered in the foreground</p>
+                <NewSubmission />
             </div>
         );
     } else {   

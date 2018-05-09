@@ -1,4 +1,10 @@
 .contest-container {
-  border: 1px solid lavenderblush;
-
+  border: 1px solid purple;
+  margin-top: 5px;
+  width: 60%;
+  position: relative;
+  left: 24%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

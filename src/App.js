@@ -10,7 +10,7 @@ import SingleContestScreen from './Screens/SingleContestScreen';
 let App = () => {
   return (
     <Router>
-      <div className="router">
+      <div>
         <Route path="/" exact component={HomepageScreen}/>
         <Route path="/login" component={HomepageLoginScreen}/>
         <Route path="/contests" exact component={ContestsScreen}/>
