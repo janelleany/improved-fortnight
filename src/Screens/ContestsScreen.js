@@ -5,6 +5,7 @@ import Header from '../Components/Header';
 import ContestsButtons from '../Components/ContestsButtons';
 import ContestsContainer from '../Components/ContestsContainer';
 import NewSubmission from '../Components/NewSubmission';
+import NewContest from '../Components/NewContest';
 
 let mapPropstoState = (state) => {
     return {allContests: state.contestList}
@@ -20,7 +21,7 @@ let ContestsScreen = ({allContests, match}) => {
                 <Header path={path}/>
                 <ContestsButtons />
                 <ContestsContainer allContests={allContests}/>
-                <p>The NewContest component has rendered in the foreground</p>
+                <NewContest />
             </div>
         );
     } else if (path === '/new/submission') {
