@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 import Header from '../Components/Header';
 import ContestsButtons from '../Components/ContestsButtons';
 import ContestsContainer from '../Components/ContestsContainer';
-import NewSubmission from '../Components/NewSubmission';
-import NewContest from '../Components/NewContest';
+import NewSubmissionForm from '../Components/NewSubmissionForm';
+import NewContestForm from '../Components/NewContestForm';
 
 let mapPropstoState = (state) => {
     return {allContests: state.contestList}
@@ -21,7 +21,7 @@ let ContestsScreen = ({allContests, match}) => {
                 <Header path={path}/>
                 <ContestsButtons />
                 <ContestsContainer allContests={allContests}/>
-                <NewContest />
+                <NewContestForm />
             </div>
         );
     } else if (path === '/new/submission') {
@@ -31,7 +31,7 @@ let ContestsScreen = ({allContests, match}) => {
                 <Header path={path}/>
                 <ContestsButtons />
                 <ContestsContainer allContests={allContests}/>
-                <NewSubmission />
+                <NewSubmissionForm />
             </div>
         );
     } else {   
