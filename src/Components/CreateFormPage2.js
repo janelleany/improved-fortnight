@@ -18,6 +18,7 @@ class CreateFormPage2 extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      queryId: "Seth",
       images: ["http://www.popecol.org/wp-content/uploads/2017/07/giraffe-at-lake-manyara.jpg"]
     }
         
