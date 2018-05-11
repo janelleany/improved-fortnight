@@ -1,4 +1,4 @@
-.contests-container {
+.all-container {
   border: 1px solid lavenderblush;
   display: flex;
   flex-direction: row;
@@ -14,12 +14,12 @@ p {
   padding-right: 6px;
 }
 
-.contest-thumbnail-container {
+.query-thumbnail-container {
   border: 1.5px solid purple;
   margin: 12px;
 }
 
-.contest-thumbnail-image-container {
+.query-thumbnail-image-container {
   width: 200px;
   height: 100px;
   border: 1px dotted lightblue;

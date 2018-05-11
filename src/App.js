@@ -1,22 +1,26 @@
 import React from 'react';
 import { HashRouter as Router, Route } from 'react-router-dom';
 
-import HomepageScreen from './Screens/HomepageScreen';
-import HomepageLoginScreen from './Screens/HomepageLoginScreen';
-import ContestsScreen from './Screens/ContestsScreen';
-import SingleContestScreen from './Screens/SingleContestScreen';
+import SignupScreen from './Screens/SignupScreen';
+import LoginScreen from './Screens/LoginScreen';
+import AllScreen from './Screens/AllScreen';
+import SingleScreen from './Screens/SingleScreen';
+import Create1Screen from './Screens/Create1Screen';
+import Create2Screen from './Screens/Create2Screen';
+import SubmitScreen from './Screens/SubmitScreen';
 
 
 let App = () => {
   return (
     <Router>
       <div>
-        <Route path="/" exact component={HomepageScreen}/>
-        <Route path="/login" component={HomepageLoginScreen}/>
-        <Route path="/contests" exact component={ContestsScreen}/>
-        <Route path="/contests/:contestId" component={SingleContestScreen}/>
-        <Route path="/new/contest" component={ContestsScreen}/>
-        <Route path="/new/submission" component={ContestsScreen}/>
+        <Route path="/" exact component={SignupScreen}/>
+        <Route path="/login" component={LoginScreen}/>
+        <Route path="/all" exact component={AllScreen}/>
+        <Route path="/all/:queryId" component={SingleScreen}/>
+        <Route path="/new/query/1" component={Create1Screen}/>
+        <Route path="/new/query/2" component={Create2Screen}/>
+        <Route path="/new/submission" component={SubmitScreen}/>
       </div>
     </Router>
   );

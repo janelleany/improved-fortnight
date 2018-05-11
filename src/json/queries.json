@@ -1,6 +1,6 @@
 [
     {
-        "contestId": "C-0014", 
+        "queryId": "C-0014", 
         "description": "goldfish", 
         "style": "Hyper-realistic",
         "placement": "Upper Arm",
@@ -9,6 +9,8 @@
         "size": "Medium",
         "experience": "Old hat",
         "zip": "30307",
+        "radius": "5",
+        "timing": "I don't know",
         "numberOfSubmissions": "13",
         "daysLeft": "2",
         "images": [
@@ -19,7 +21,7 @@
     },
 
     {
-        "contestId": "C-0206", 
+        "queryId": "C-0206", 
         "description": "eyeball like MC Escher", 
         "style": "3D",
         "placement": "Chest",
@@ -28,6 +30,8 @@
         "size": "Small",
         "experience": "First-timer",
         "zip": "30324",
+        "radius": "10",
+        "timing": "Let's go!",
         "numberOfSubmissions": "7",
         "daysLeft": "5",
         "images": [
@@ -37,7 +41,7 @@
     },		
 
     {
-        "contestId": "C-0234", 
+        "queryId": "C-0234", 
         "description": "A victorian, shapeshifting raven", 
         "style": "Victorian",
         "placement": "Chest",
@@ -46,6 +50,8 @@
         "size": "Large",
         "experience": "Old hat",
         "zip": "10472",
+        "radius": "10",
+        "timing": "Let's go!",
         "numberOfSubmissions": "6",
         "daysLeft": "4",
         "images": [
@@ -56,7 +62,7 @@
     },
 
     {
-        "contestId": "C-1000", 
+        "queryId": "C-1000", 
         "description": "A geo turtle with an island on his back", 
         "style": "Geometric",
         "placement": "Back",
@@ -65,6 +71,8 @@
         "size": "Large",
         "experience": "First-timer",
         "zip": "20833",
+        "radius": "25",
+        "timing": "Within 30 days",
         "numberOfSubmissions": "19",
         "daysLeft": "1",
         "images": [
