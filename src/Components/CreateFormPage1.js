@@ -1,11 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import '../styles/NewContestForm.css';
+import '../styles/CreateForm.css';
 
-import { newContestAction } from '../lib/actions';
-
-import { toggleDisplayNextAction } from '../lib/actions';
+import { createQuery } from '../lib/actions';
 
 let mapStateToProps = (state) => {
   return {
@@ -15,12 +13,11 @@ let mapStateToProps = (state) => {
 
 let mapDispatchToProps = (dispatch) => {
   return {
-    newContestAction: (contestDetails) => dispatch(newContestAction(contestDetails)),
-    toggleDisplayNextAction: () => dispatch(toggleDisplayNextAction())
+    createQuery: (specs) => dispatch(createQuery(specs))
   };
 }
 
-class NewContestFormPage1 extends React.Component {
+class CreateFormPage1 extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -45,30 +42,26 @@ class NewContestFormPage1 extends React.Component {
     this.setState({[property]: value});
   }
 
-  clickNext = (event) => {
-    this.props.displayNextAction();
+  clickNext = (event, specs) => {
     event.preventDefault();
-  }
-
-  clickDone = (event) => {
-    this.props.setEditModeAction()
-    this.props.newContestAction(this.state);
+    this.props.createQuery(this.state);
+    this.props.history.push('/new/query/2');
   }
 
   componentDidMount() {
     this.setState({
-      canvasId: this.props.creatorId,
-
+      canvasId: this.props.creatorId
     });
   }
 
     render() {
+      
       return (
-        <form className="new-contest-container" onSubmit={this.submitHandler}>
-        <p>I am the "create a new contest form" and one day I'll be very pretty</p>
-          <label for="description"><input type="text" size="50" required placeholder="Describe what you want" name="description" id="description" onChange={this.changeHandler} /></label>
+        <form className="form-container" onSubmit={this.clickNext}>
+          <p>I am the "create a new query form" and one day I'll be very pretty</p>
+          <label><input type="text" size="50" required placeholder="Describe your vision" name="description" id="description" onChange={this.changeHandler} /></label>
           
-          <label for="style"><select required name="style" id="style" onChange={this.changeHandler} >
+          <label><select required name="style" id="style" onChange={this.changeHandler} >
             <option default>tattoo style</option>
             <option>3D</option>
             <option>American Traditional</option>
@@ -86,7 +79,7 @@ class NewContestFormPage1 extends React.Component {
             <option>I don't know</option>
           </select></label>
 
-          <label for="placement"><select required name="placement" id="placement" onChange={this.changeHandler} >
+          <label><select required name="placement" id="placement" onChange={this.changeHandler} >
             <option default>body placement</option>
             <option>Chest</option>
             <option>Upper Arm</option>
@@ -102,20 +95,20 @@ class NewContestFormPage1 extends React.Component {
             <option>I don't know</option>
           </select></label>
 
-          <label for="color"><select required name="color" id="color" onChange={this.changeHandler} >
+          <label><select required name="color" id="color" onChange={this.changeHandler} >
             <option default>color vs black</option>
             <option>Color</option>
-            <option>Blacks</option>
+            <option>Black</option>
             <option>I don't know</option>
           </select></label>
 
-          <label for="type"><select required name="type" id="type" onChange={this.changeHandler} >
+          <label><select required name="type" id="type" onChange={this.changeHandler} >
             <option default>artistic license?</option>
-            <option>Do you</option>
-            <option>Specific</option>
+            <option>I bow to your genius</option>
+            <option>I have a very specific vision</option>
           </select></label>
 
-          <label for="size"><select required name="size" id="size" onChange={this.changeHandler} >
+          <label><select required name="size" id="size" onChange={this.changeHandler} >
             <option default>size</option>
             <option>Small</option>
             <option>Medium</option>
@@ -124,30 +117,30 @@ class NewContestFormPage1 extends React.Component {
             <option>I don't know</option>
           </select></label>
 
-          <label for="experience"><select required name="experience" id="experience" onChange={this.changeHandler} >
+          <label><select required name="experience" id="experience" onChange={this.changeHandler} >
             <option default>first tattoo?</option>
             <option>First-timer</option>
-            <option>Old Pro/Hat / Not my first rodeo</option>
+            <option>Not my first rodeo</option>
           </select></label>
 
-          <label for="timing"><select required name="timing" id="timing" onChange={this.changeHandler} >
+          <label><select required name="timing" id="timing" onChange={this.changeHandler} >
             <option default>time frame</option>
             <option>Let's go!</option>
             <option>Within 30 days</option>
             <option>Still thinking about it</option>
           </select></label>
 
-          <label for="zip"><input type="number" min="10000" max="99999" required placeholder="zip" name="zip" id="zip" onChange={this.changeHandler} /></label>
+          <label><input type="number" min="10000" max="99999" required placeholder="zip" name="zip" id="zip" onChange={this.changeHandler} /></label>
 
           <label>5 mi<input type="radio" name="radius" value="5" onChange={this.changeHandler} /></label>
           <label>10 mi<input type="radio" name="radius" value="10" onChange={this.changeHandler} /></label>
           <label>25 mi<input type="radio" name="radius" value="25" onChange={this.changeHandler} /></label>
 
-          <label for="submit"> <input type="submit" name="submit" value="Next ==>" onClick={this.clickNext} /></label>
+          <label> <input type="submit" name="submit" value="Next ==>" /></label>
 
         </form>
       );
     }
   }
 
-export default connect(mapStateToProps, mapDispatchToProps)(NewContestFormPage1);
+export default connect(mapStateToProps, mapDispatchToProps)(CreateFormPage1);

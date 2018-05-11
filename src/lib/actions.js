@@ -1,22 +1,15 @@
-const CREATE_NEW_CONTEST = "CREATE_NEW_CONTEST";
-const TOGGLE_EDITING_CONTEST = "TOGGLE_EDITING_CONTEST";
-const TOGGLE_DISPLAY_NEXT = "TOGGLE_DISPLAY_NEXT";
+const CREATE_QUERY = "CREATE_QUERY";
+const SAVE_QUERY = "SAVE_QUERY";
 
-export let newContestAction = (contestDetails) => {
+export let createQuery = (specs) => {
     return {
-    type: CREATE_NEW_CONTEST,
-    payload: contestDetails
+    type: CREATE_QUERY,
+    payload: specs
     }
 }
 
-export let toggleEditingContestAction = () => {
+export let saveQuery = () => {
     return {
-        type: TOGGLE_EDITING_CONTEST
-    }
-}
-
-export let toggleDisplayNextAction = () => {
-    return {
-        type: TOGGLE_DISPLAY_NEXT
+        type: SAVE_QUERY
     }
 }

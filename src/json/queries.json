@@ -1,6 +1,6 @@
 [
     {
-        "contestId": "C-0014", 
+        "queryId": "C-0014", 
         "description": "goldfish", 
         "style": "Hyper-realistic",
         "placement": "Upper Arm",
@@ -21,7 +21,7 @@
     },
 
     {
-        "contestId": "C-0206", 
+        "queryId": "C-0206", 
         "description": "eyeball like MC Escher", 
         "style": "3D",
         "placement": "Chest",
@@ -41,7 +41,7 @@
     },		
 
     {
-        "contestId": "C-0234", 
+        "queryId": "C-0234", 
         "description": "A victorian, shapeshifting raven", 
         "style": "Victorian",
         "placement": "Chest",
@@ -62,7 +62,7 @@
     },
 
     {
-        "contestId": "C-1000", 
+        "queryId": "C-1000", 
         "description": "A geo turtle with an island on his back", 
         "style": "Geometric",
         "placement": "Back",

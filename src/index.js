@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 
 import artists from './json/artists';
 import canvases from './json/canvases';
-import contests from './json/contests';
+import queries from './json/queries';
 import submissions from './json/submissions';
 
 import App from './App';
@@ -16,33 +16,25 @@ let initialState = {
     currentUser: canvases[3],
     canvasList: canvases,
     artistList: artists,
-    contestList: contests,
+    queryList: queries,
     submissionList: submissions,
     displayNext: false,
-    editingContest: false,
-    newContest: {}
+    newQuery: {}
 }
 
 let reducer = (state = initialState, action) => {
     switch (action.type) {
-        case "CREATE_NEW_CONTEST": {
+        case "CREATE_QUERY": {
             return {
-                ...state, newContest: {...state.newContest, ...action.payload}
+                ...state, newQuery: {...state.newQuery, ...action.payload}
             }
         }
 
-        case "TOGGLE_DISPLAY_NEXT": {
+        case "SAVE_QUERY": {
             return {
-                ...state, displayNext: !state.displayNext
+                ...state, queryList: [...state.queryList, state.newQuery]
             }
         }
-
-        case "TOGGLE_EDITING_CONTEST": {
-            return {
-                ...state, editingContest: !state.editingContest
-            }
-        }
-
 
         default: return state; 
     }
