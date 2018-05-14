@@ -17,7 +17,7 @@ let App = () => {
         <Route path="/" exact component={SignupScreen}/>
         <Route path="/login" component={LoginScreen}/>
         <Route path="/all" exact component={AllScreen}/>
-        <Route path="/all/:queryId" component={SingleScreen}/>
+        <Route path="/all/:queryid" component={SingleScreen}/>
         <Route path="/new/query/1" component={Create1Screen}/>
         <Route path="/new/query/2" component={Create2Screen}/>
         <Route path="/new/submission" component={SubmitScreen}/>

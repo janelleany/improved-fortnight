@@ -4,26 +4,29 @@ import registerServiceWorker from './registerServiceWorker';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
-import artists from './json/artists';
 import canvases from './json/canvases';
-import queries from './json/queries';
-import submissions from './json/submissions';
 
 import App from './App';
 
 let initialState = {
     isLoggedIn: false,
     currentUser: canvases[3],
-    canvasList: canvases,
-    artistList: artists,
-    queryList: queries,
-    submissionList: submissions,
+    canvasList: [],
+    artistList: [],
+    queryList: [],
+    submissionList: [],
     displayNext: false,
     newQuery: {}
 }
 
 let reducer = (state = initialState, action) => {
     switch (action.type) {
+        case "LOAD_ALL": {
+            return {
+                ...state, queryList: action.payload
+            }
+        }
+        
         case "CREATE_QUERY": {
             return {
                 ...state, newQuery: {...state.newQuery, ...action.payload}

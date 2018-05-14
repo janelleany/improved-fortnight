@@ -9,14 +9,14 @@ let AllContainer = ({all}) => {
       {
         all.map(query => {
           return (
-            <Link key={query.queryId} to={`/all/${query.queryId}`}>
+            <Link key={query.queryid} to={`/all/${query.queryid}`}>
               <div className="query-thumbnail-container">
                 <div className="query-thumbnail-image-container"><img src={query.images[0]} alt="inspiration"/></div>
-                <p>{query.description}</p>
+                <p>{query.querydescription}</p>
                 <p>Style: {query.style}</p>
-                <p>Type: {query.type}</p>
+                <p>Type: {query.querytype}</p>
                 <p>Zip: {query.zip}</p>
-                <p>{query.daysLeft} days left</p>
+                <p>{query.daysleft} days left</p>
                 </div>
             </Link>
           );

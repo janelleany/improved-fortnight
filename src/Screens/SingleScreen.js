@@ -9,7 +9,7 @@ let mapPropsToState = (state) => {
 }
 
 let SingleScreen = ({all, match}) => {
-    let id = match.params.queryId;
+    let id = match.params.queryid;
     return (
         <div>
             <p>The SingleScreen has rendered. It contains:</p>

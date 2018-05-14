@@ -18,4 +18,4 @@ class Sample extends Component {
   }
 }
 
-export default Smaple;
+export default Sample;
