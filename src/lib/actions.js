@@ -24,8 +24,9 @@ export let createPiece = (specs) => {
     }
 }
 
-export let savePiece = () => {
+export let savePiece = (data) => {
     return {
-        type: SAVE_PIECE
+        type: SAVE_PIECE,
+        payload: data
     }
 }

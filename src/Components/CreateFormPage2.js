@@ -3,15 +3,24 @@ import { connect } from 'react-redux';
 
 import '../styles/CreateForm.css';
 
+import { createPieceFetch } from '../lib/api-calls';
+
 import { createPiece } from '../lib/actions';
 import { savePiece } from '../lib/actions';
+
+
+let mapStateToProps = (state) => {
+  return {
+    newPiece: state.newPiece
+  };
+}
 
 
 
 let mapDispatchToProps = (dispatch) => {
   return {
     createPiece: (specs) => dispatch(createPiece(specs)),
-    savePiece: () => dispatch(savePiece())
+    savePiece: (data) => dispatch(savePiece(data))
   };
 }
 
@@ -34,8 +43,18 @@ class CreateFormPage2 extends React.Component {
   }
 
   clickDone = (event) => {
+    let newPiece = this.props.newPiece;
     this.props.createPiece(this.state);
-    this.props.savePiece();
+    createPieceFetch(newPiece)
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      } else {throw new Error(`Status Code: ${response.status}. Message: ${response.statusText}`) }
+    })
+    .then(data => {
+      console.log(data);
+      this.props.savePiece(data);})
+    .catch(error => alert(error))
     this.props.history.push('/pieces');
   }
 
@@ -49,4 +68,4 @@ class CreateFormPage2 extends React.Component {
       }
     }
 
-export default connect(null, mapDispatchToProps)(CreateFormPage2);
+export default connect(mapStateToProps, mapDispatchToProps)(CreateFormPage2);

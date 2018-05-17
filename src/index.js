@@ -36,7 +36,7 @@ let reducer = (state = initialState, action) => {
 
         case 'SAVE_PIECE': {
             return {
-                ...state, pieces: [...state.pieces, state.newPiece]
+                ...state, pieces: [...state.pieces, action.payload]
             }
         }
 

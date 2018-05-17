@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { getAllFetch } from '../lib/api-calls';
-import { createPieceFetch } from '../lib/api-calls';
 import { loadAll } from '../lib/actions';
 
 import Header from '../Components/Header';
@@ -21,16 +20,16 @@ let mapDispatchToProps = (dispatch) => {
 class AllScreen extends React.Component {
 
     componentDidMount() {
-        let newPiece = this.props.newPiece;
         getAllFetch()
         .then(response => {
-            if (response.ok) {
-                return response.json()
-            } else { throw new Error(`Status Code: ${response.status}. Message: ${response.statusText}`) }
-        })
-        .then(all => {this.props.loadAll(all)})
-        .catch(error => alert(error));
+                if (response.ok) {
+                    return response.json()
+                } else { throw new Error(`Status code: ${response.status}. Message: ${response.statusText}`) }
+            })
+            .then(all => {this.props.loadAll(all)})
+            .catch(error => alert(error));
     }
+
     
     render() {
         let all = this.props.all;
