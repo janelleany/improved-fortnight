@@ -5,15 +5,15 @@ import Header from '../Components/Header';
 import Single from '../Components/Single';
 
 let mapPropsToState = (state) => {
-    return {all: state.queryList}
+    return {all: state.pieces, alias: state.currentUser.alias}
 }
 
-let SingleScreen = ({all, match}) => {
-    let id = match.params.queryid;
+let SingleScreen = ({all, alias, match}) => {
+    let id = match.params.id;
     return (
         <div>
             <p>The SingleScreen has rendered. It contains:</p>
-            <Header />
+            <Header alias={alias}/>
             <Single id={id} all={all}/>
         </div>
     );

@@ -2,10 +2,10 @@ import React from 'react';
 import '../styles/Header.css';
 
 
-let Header = () => {
+let Header = ({alias}) => {
   return (
     <div className="header">
-      <p>The Header Component has rendered.</p>
+      <p>{`In the header it'll say something like: Hello, ${alias}.`}</p>
     </div>
   );
 }

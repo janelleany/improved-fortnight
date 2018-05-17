@@ -14,12 +14,12 @@ p {
   padding-right: 6px;
 }
 
-.query-thumbnail-container {
+.piece-thumbnail-container {
   border: 1.5px solid purple;
   margin: 12px;
 }
 
-.query-thumbnail-image-container {
+.piece-thumbnail-image-container {
   width: 200px;
   height: 100px;
   border: 1px dotted lightblue;

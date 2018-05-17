@@ -3,25 +3,28 @@ import { connect } from 'react-redux';
 
 import '../styles/CreateForm.css';
 
-import { createQuery } from '../lib/actions';
-import { saveQuery } from '../lib/actions';
+import { createPiece } from '../lib/actions';
+import { savePiece } from '../lib/actions';
+
 
 
 let mapDispatchToProps = (dispatch) => {
   return {
-    createQuery: (specs) => dispatch(createQuery(specs)),
-    saveQuery: () => dispatch(saveQuery())
+    createPiece: (specs) => dispatch(createPiece(specs)),
+    savePiece: () => dispatch(savePiece())
   };
 }
+
+let date = Date();
 
 class CreateFormPage2 extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      queryId: "Seth",
-      images: ["http://www.popecol.org/wp-content/uploads/2017/07/giraffe-at-lake-manyara.jpg"]
+      img: 'http://www.popecol.org/wp-content/uploads/2017/07/giraffe-at-lake-manyara.jpg',
+      active: true,
+      createddate: date
     }
-        
   }
 
   changeHandler = (event) => {
@@ -31,15 +34,15 @@ class CreateFormPage2 extends React.Component {
   }
 
   clickDone = (event) => {
-    this.props.createQuery(this.state);
-    this.props.saveQuery();
-    this.props.history.push('/all');
+    this.props.createPiece(this.state);
+    this.props.savePiece();
+    this.props.history.push('/pieces');
   }
 
     render() {
       return (
           <div className="form-container">
-            <p>I am the "upload inspiration pics" form, and one day I'll be very pretty.</p>
+            <p>I am the "upload sketch" form, and one day I'll be very pretty.</p>
             <button onClick={this.clickDone}>Done</button>
           </div>
         );

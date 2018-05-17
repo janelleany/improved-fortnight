@@ -9,23 +9,18 @@ let style = {
 }
 
 let Single = ({id, all}) => {
-  let result = all.find(query => query.queryid === id);
+  let result = all.find(piece => piece.id === id);
   return (
     <div className="single-container">
-      <p>~~Pretend I am a slideshow of images~~ </p>
-      <p>For now, just look at this one:</p>
-      <img src={result.images[0]} alt="inspiration" style={style}/>
-      <p>zip: {result.zip}</p>
-      <p>{result.numberofsubmissions} submissions</p>
-      <p>{result.daysleft} days left</p>
-      <p>Description: {result.querydescription}</p>
+      <img src={result.img} alt="sketch" style={style}/>
+      <p>Zip: {result.zip}</p>
+      <p>{result.caption}</p>
       <p>Style: {result.style}</p>
-      <p>Type: {result.querytype}</p>
-      <p>Placement: {result.placement}</p>
       <p>Color: {result.color}</p>
       <p>Size: {result.size}</p>
-      <p>Experience: {result.experience}</p>
-      <Link to={"/new/submission"}><button>draw</button></Link>
+      <p>Price: {result.price}</p>
+      <p>Deposit: {result.deposit}</p>
+      <Link to={"/new/reservation"}><button>reserve</button></Link>
     </div>
     );
   }

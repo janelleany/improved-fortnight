@@ -7,16 +7,14 @@ let AllContainer = ({all}) => {
   return (
     <div className="all-container">
       {
-        all.map(query => {
+        all.map(piece => {
           return (
-            <Link key={query.queryid} to={`/all/${query.queryid}`}>
-              <div className="query-thumbnail-container">
-                <div className="query-thumbnail-image-container"><img src={query.images[0]} alt="inspiration"/></div>
-                <p>{query.querydescription}</p>
-                <p>Style: {query.style}</p>
-                <p>Type: {query.querytype}</p>
-                <p>Zip: {query.zip}</p>
-                <p>{query.daysleft} days left</p>
+            <Link key={piece.id} to={`/pieces/${piece.id}`}>
+              <div className="piece-thumbnail-container">
+                <div className="piece-thumbnail-image-container"><img src={piece.img} alt="sketch"/></div>
+                <p>{piece.tattooeralias}</p>
+                <p>price: {piece.price}</p>
+                <p>deposit: {piece.deposit}</p>
                 </div>
             </Link>
           );

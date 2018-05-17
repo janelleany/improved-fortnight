@@ -3,17 +3,17 @@ import { connect } from 'react-redux';
 
 import '../styles/CreateForm.css';
 
-import { createQuery } from '../lib/actions';
+import { createPiece } from '../lib/actions';
 
 let mapStateToProps = (state) => {
   return {
-    creatorId: state.currentUser.canvasId
+    id: state.currentUser.id
   };
 }
 
 let mapDispatchToProps = (dispatch) => {
   return {
-    createQuery: (specs) => dispatch(createQuery(specs))
+    createPiece: (specs) => dispatch(createPiece(specs))
   };
 }
 
@@ -21,17 +21,14 @@ class CreateFormPage1 extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      canvasId: "",
-      description: "",
-      style: "",
-      placement: "",
-      color: "",
-      type: "",
-      size: "",
-      experience: "",
-      zip: "",
-      radius: "",
-      timing: ""
+      tattooerid: null,
+      caption: null,
+      style: null,
+      color: null,
+      size: null,
+      price: null,
+      deposit: null,
+      zip: null,
     }
         
   }
@@ -44,13 +41,13 @@ class CreateFormPage1 extends React.Component {
 
   clickNext = (event, specs) => {
     event.preventDefault();
-    this.props.createQuery(this.state);
-    this.props.history.push('/new/query/2');
+    this.props.createPiece(this.state);
+    this.props.history.push('/new/piece/2');
   }
 
   componentDidMount() {
     this.setState({
-      canvasId: this.props.creatorId
+      tattooerid: this.props.id
     });
   }
 
@@ -58,84 +55,57 @@ class CreateFormPage1 extends React.Component {
       
       return (
         <form className="form-container" onSubmit={this.clickNext}>
-          <p>I am the "create a new query form" and one day I'll be very pretty</p>
-          <label><input type="text" size="50" required placeholder="Describe your vision" name="description" id="description" onChange={this.changeHandler} /></label>
+          <p>I am the "create a new piece form" and one day I'll be very pretty</p>
           
-          <label><select required name="style" id="style" onChange={this.changeHandler} >
-            <option default>tattoo style</option>
-            <option>3D</option>
-            <option>American Traditional</option>
-            <option>Biomechanical</option>
-            <option>Black and Grey</option>
-            <option>Blackwork</option>
-            <option>Dotwork</option>
-            <option>Geometric</option>
-            <option>New School</option>
-            <option>Pin-up</option>
-            <option>Traditional Japanese</option>
-            <option>Trash Polka</option>
-            <option>Tribal</option>
-            <option>Watercolor</option>
-            <option>I don't know</option>
+          <label><input type="text" size="50" required placeholder="Describe your vision" name="caption" id="caption" onChange={this.changeHandler} /></label>
+          
+          <fieldset onChange={this.changeHandler}>
+            <legend>Choose the style most appropriate for this piece</legend>
+            <label>3D<input type='checkbox' name='style' value='3D'/></label>
+            <label>American Traditional<input type='checkbox' name='style' value='American Traditional'/></label>
+            <label>Biomechanical<input type='checkbox' name='style' value='Biomechanical'/></label>
+            <label>Black and Grey<input type='checkbox' name='style' value='Black and Grey'/></label>
+            <label>Blackwork<input type='checkbox' name='style' value='Blackwork'/></label>
+            <label>Dotwork<input type='checkbox' name='style' value='Dotwork'/></label>
+            <label>Geometric<input type='checkbox' name='style' value='Geometric'/></label>
+            <label>New School<input type='checkbox' name='style' value='New School'/></label>
+            <label>Pin-up<input type='checkbox' name='style' value='Pin-up'/></label>
+            <label>Traditional Japanese<input type='checkbox' name='style' value='Traditional Japanese'/></label>
+            <label>Trash Polka<input type='checkbox' name='style' value='Trash Polka'/></label>
+            <label>Tribal<input type='checkbox' name='style' value='Tribal'/></label>
+            <label>Watercolor<input type='checkbox' name='style' value='Watercolor'/></label>
+            <label>Illustrative/Hyper-Realistic<input type='checkbox' name='style' value='Illustrative/Hyper-Realistic'/></label>
+          </fieldset>
+
+<fieldset onChange={this.changeHandler}>
+            <legend>Choose color type appropriate for this piece</legend>
+            <label>Black<input type='checkbox' name='color' value='Black'/></label>
+            <label>Color<input type='checkbox' name='color' value='Color'/></label>
+            <label>Either<input type='checkbox' name='color' value='Color'/></label>
+            </fieldset>
+
+          <fieldset onChange={this.changeHandler}>
+            <legend>Choose the size most appropriate for this piece</legend>
+            <label>Small<input type='checkbox' name='size' value='Small'/></label>
+            <label>Medium<input type='checkbox' name='size' value='Medium'/></label>
+            <label>Large<input type='checkbox' name='size' value='Large'/></label>
+            <label>X-Large<input type='checkbox' name='size' value='X-Large'/></label>
+            <label>Sleeve<input type='checkbox' name='size' value='Sleeve'/></label>
+            <label>Cover<input type='checkbox' name='size' value='Cover'/></label>
+            </fieldset>
+          
+
+          <label><input type='number' min='1' required placeholder='price' name='price' id='price' onChange={this.changeHandler} /></label>
+
+          <label>Choose deposit amount<select required name='deposit' id='deposit' onChange={this.changeHandler} >
+            <option default>select</option>
+            <option value='25'>USD$25</option>
+            <option value='50'>USD$50</option>
           </select></label>
+          
+          <label>Where are you?<input type="number" min="10000" max="99999" required placeholder="zip" name="zip" id="zip" onChange={this.changeHandler} /></label>
 
-          <label><select required name="placement" id="placement" onChange={this.changeHandler} >
-            <option default>body placement</option>
-            <option>Chest</option>
-            <option>Upper Arm</option>
-            <option>Lower Arm</option>
-            <option>Hand</option>
-            <option>Back</option>
-            <option>Upper Leg</option>
-            <option>Lower Leg</option>
-            <option>Foot</option>
-            <option>Ribs</option>
-            <option>Stomach</option>
-            <option>Intimate</option>
-            <option>I don't know</option>
-          </select></label>
-
-          <label><select required name="color" id="color" onChange={this.changeHandler} >
-            <option default>color vs black</option>
-            <option>Color</option>
-            <option>Black</option>
-            <option>I don't know</option>
-          </select></label>
-
-          <label><select required name="type" id="type" onChange={this.changeHandler} >
-            <option default>artistic license?</option>
-            <option>I bow to your genius</option>
-            <option>I have a very specific vision</option>
-          </select></label>
-
-          <label><select required name="size" id="size" onChange={this.changeHandler} >
-            <option default>size</option>
-            <option>Small</option>
-            <option>Medium</option>
-            <option>Large</option>
-            <option>Sleeve or Cover</option>
-            <option>I don't know</option>
-          </select></label>
-
-          <label><select required name="experience" id="experience" onChange={this.changeHandler} >
-            <option default>first tattoo?</option>
-            <option>First-timer</option>
-            <option>Not my first rodeo</option>
-          </select></label>
-
-          <label><select required name="timing" id="timing" onChange={this.changeHandler} >
-            <option default>time frame</option>
-            <option>Let's go!</option>
-            <option>Within 30 days</option>
-            <option>Still thinking about it</option>
-          </select></label>
-
-          <label><input type="number" min="10000" max="99999" required placeholder="zip" name="zip" id="zip" onChange={this.changeHandler} /></label>
-
-          <label>5 mi<input type="radio" name="radius" value="5" onChange={this.changeHandler} /></label>
-          <label>10 mi<input type="radio" name="radius" value="10" onChange={this.changeHandler} /></label>
-          <label>25 mi<input type="radio" name="radius" value="25" onChange={this.changeHandler} /></label>
-
+          
           <label> <input type="submit" name="submit" value="Next ==>" /></label>
 
         </form>

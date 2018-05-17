@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { getAllFetch } from '../lib/api-calls';
+import { createPieceFetch } from '../lib/api-calls';
 import { loadAll } from '../lib/actions';
 
 import Header from '../Components/Header';
@@ -9,31 +10,34 @@ import Buttons from '../Components/Buttons';
 import AllContainer from '../Components/AllContainer';
 
 let mapStateToProps = (state) => {
-    return { all: state.queryList }
+    return { all: state.pieces, alias: state.currentUser.alias, newPiece: state.newPiece }
 }
 
 let mapDispatchToProps = (dispatch) => {
     return { loadAll: all => dispatch(loadAll(all)) }
 }
 
+
 class AllScreen extends React.Component {
 
     componentDidMount() {
+        let newPiece = this.props.newPiece;
         getAllFetch()
-            .then(response => response.json())
-            .then(all => {
-                this.props.loadAll(all);
-            });
-        }
+        .then(response => {
+            if (response.ok) {
+                return response.json()
+            } else { throw new Error(`Status Code: ${response.status}. Message: ${response.statusText}`) }
+        })
+        .then(all => {this.props.loadAll(all)})
+        .catch(error => alert(error));
+    }
     
     render() {
-        
         let all = this.props.all;
-    
+        let alias = this.props.alias;
         return (
             <div className="all-screen">
-                <p>The AllScreen has rendered. And it contains:</p>
-                <Header />
+                <Header alias={alias}/>
                 <Buttons />
                 <AllContainer all={all} />
             </div>

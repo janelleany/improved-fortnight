@@ -7,15 +7,15 @@ import AllContainer from '../Components/AllContainer';
 import CreateFormPage1 from '../Components/CreateFormPage1';
 
 let mapPropstoState = (state) => {
-    return {all: state.queryList}
+    return {all: state.pieces, alias: state.currentUser.alias}
 }
 
 
-let Create1Screen = ({all, history}) => {
+let Create1Screen = ({all, alias, history}) => {
     return (
         <div className="create-screen">
             <p>The Create1Screen has rendered. And it contains:</p>
-            <Header />
+            <Header alias={alias}/>
             <Buttons />
             <AllContainer all={all} />
             <CreateFormPage1 history={history}/>

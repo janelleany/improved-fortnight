@@ -7,7 +7,12 @@ import AllScreen from './Screens/AllScreen';
 import SingleScreen from './Screens/SingleScreen';
 import Create1Screen from './Screens/Create1Screen';
 import Create2Screen from './Screens/Create2Screen';
-import SubmitScreen from './Screens/SubmitScreen';
+import ReservationScreen from './Screens/ReservationScreen';
+import PricingScreen from './Screens/PricingScreen';
+import FAQScreen from './Screens/FAQScreen';
+import AboutScreen from './Screens/AboutScreen';
+import ContactScreen from './Screens/ContactScreen';
+import ForgotScreen from './Screens/ForgotScreen';
 
 
 let App = () => {
@@ -16,11 +21,16 @@ let App = () => {
       <div>
         <Route path="/" exact component={SignupScreen}/>
         <Route path="/login" component={LoginScreen}/>
-        <Route path="/all" exact component={AllScreen}/>
-        <Route path="/all/:id" component={SingleScreen}/>
+        <Route path="/pieces" exact component={AllScreen}/>
+        <Route path="/pieces/:id" component={SingleScreen}/>
         <Route path="/new/piece/1" component={Create1Screen}/>
         <Route path="/new/piece/2" component={Create2Screen}/>
-        {/* <Route path="/new/purchase" component={PurchaseScreen}/> */}
+        <Route path="/pricing" component={PricingScreen}/>
+        <Route path="/faq" component={FAQScreen}/>
+        <Route path="/about" component={AboutScreen}/>
+        <Route path="/contact" component={ContactScreen}/>
+        <Route path="/new/reservation" component={ReservationScreen}/>
+        <Route path="/forgot" component={ForgotScreen}/>
       </div>
     </Router>
   );
