@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import '../styles/Single.css';
+import '../styles/App.css';
 
 let style = {
   "max-width": "200px",

@@ -1,5 +1,5 @@
 import React from 'react';
-// import '../styles/FAQScreen.css';
+import '../styles/App.css';
 
 let FAQScreen = () => {
   return (

@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import '../styles/App.css';
+
 import Header from '../Components/Header';
 import Buttons from '../Components/Buttons';
 import AllContainer from '../Components/AllContainer';

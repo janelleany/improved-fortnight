@@ -1,5 +1,5 @@
 import React from 'react';
-// import '../styles/ContactScreen.css';
+import '../styles/App.css';
 
 let ContactScreen = () => {
   return (

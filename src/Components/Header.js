@@ -1,6 +1,7 @@
 import React from 'react';
-import '../styles/Header.css';
 
+
+import '../styles/App.css';
 
 let Header = ({alias}) => {
   return (

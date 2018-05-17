@@ -18,7 +18,7 @@ import ForgotScreen from './Screens/ForgotScreen';
 let App = () => {
   return (
     <Router>
-      <div>
+      <div className='app-div'>
         <Route path="/" exact component={SignupScreen}/>
         <Route path="/login" component={LoginScreen}/>
         <Route path="/pieces" exact component={AllScreen}/>

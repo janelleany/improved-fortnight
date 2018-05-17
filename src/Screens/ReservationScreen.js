@@ -1,5 +1,5 @@
 import React from 'react';
-// import '../styles/ReservationScreen.css';
+import '../styles/App.css';
 
 let ReservationScreen = () => {
   return (

@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { getAllFetch } from '../lib/api-calls';
 import { loadAll } from '../lib/actions';
 
+import '../styles/App.css';
+
 import Header from '../Components/Header';
 import Buttons from '../Components/Buttons';
 import AllContainer from '../Components/AllContainer';

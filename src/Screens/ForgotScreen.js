@@ -1,5 +1,5 @@
 import React from 'react';
-// import '../styles/ForgotScreen.css';
+import '../styles/App.css';
 
 let ForgotScreen = () => {
   return (

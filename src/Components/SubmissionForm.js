@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/SubmissionForm.css';
+import '../styles/App.css';
 
 let NewSubmissionForm = () => {
   return (

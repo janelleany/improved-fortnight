@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import '../styles/CreateForm.css';
+import '../styles/App.css';
 
 import { createPieceFetch } from '../lib/api-calls';
 
@@ -30,7 +30,7 @@ class CreateFormPage2 extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      img: 'http://www.popecol.org/wp-content/uploads/2017/07/giraffe-at-lake-manyara.jpg',
+      img: null,
       active: true,
       createddate: date
     }
@@ -51,9 +51,7 @@ class CreateFormPage2 extends React.Component {
         return response.json();
       } else {throw new Error(`Status Code: ${response.status}. Message: ${response.statusText}`) }
     })
-    .then(data => {
-      console.log(data);
-      this.props.savePiece(data);})
+    .then(data => this.props.savePiece(data))
     .catch(error => alert(error))
     this.props.history.push('/pieces');
   }
@@ -62,6 +60,7 @@ class CreateFormPage2 extends React.Component {
       return (
           <div className="form-container">
             <p>I am the "upload sketch" form, and one day I'll be very pretty.</p>
+            <input type='text' required placeholder="Enter url of sketch here" name='img' id='img' onChange={this.changeHandler}/>
             <button onClick={this.clickDone}>Done</button>
           </div>
         );

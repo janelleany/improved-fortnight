@@ -2,7 +2,7 @@ import React from 'react';
 
 import { createAccountFetch } from '../lib/api-calls';
 
-import '../styles/SignupForm.css';
+import '../styles/App.css';
 
 
 class SignupForm extends React.Component {
@@ -33,7 +33,8 @@ class SignupForm extends React.Component {
 
   render() {
     return (
-      <form className="form-container" onSubmit={this.clickSignup}>
+      <div className='form-container'>
+      <form className='login-form' onSubmit={this.clickSignup}>
       
         <p>I am the "create a new account form" and one day I'll be very pretty</p>
 
@@ -49,6 +50,7 @@ class SignupForm extends React.Component {
         <label> <input type="submit" name="submit" value="Create My Account" /></label>
 
       </form>
+      </div>
     );
   }
 }

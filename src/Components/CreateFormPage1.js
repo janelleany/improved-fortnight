@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import '../styles/CreateForm.css';
+import '../styles/App.css';
 
 import { createPiece } from '../lib/actions';
 

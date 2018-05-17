@@ -1,5 +1,5 @@
 import React from 'react';
-// import '../styles/PricingScreen.css';
+import '../styles/App.css';
 
 let PricingScreen = () => {
   return (

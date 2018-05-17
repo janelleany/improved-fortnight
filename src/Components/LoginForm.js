@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { processLoginFetch } from '../lib/api-calls';
 import { login } from '../lib/actions';
 
-import '../styles/LoginForm.css';
+import '../styles/App.css';
 
 
 let mapDispatchToProps = (dispatch) => {

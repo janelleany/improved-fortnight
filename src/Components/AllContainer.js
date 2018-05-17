@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-import '../styles/AllContainer.css';
+import '../styles/App.css';
 
 let AllContainer = ({all}) => {
   return (
@@ -9,14 +9,16 @@ let AllContainer = ({all}) => {
       {
         all.map(piece => {
           return (
-            <Link key={piece.id} to={`/pieces/${piece.id}`}>
+            
               <div className="piece-thumbnail-container">
+              <Link key={piece.id} to={`/pieces/${piece.id}`}>
                 <div className="piece-thumbnail-image-container"><img src={piece.img} alt="sketch"/></div>
                 <p>{piece.tattooeralias}</p>
                 <p>price: {piece.price}</p>
                 <p>deposit: {piece.deposit}</p>
+                </Link>
                 </div>
-            </Link>
+            
           );
         })
       }

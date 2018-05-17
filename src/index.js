@@ -4,6 +4,8 @@ import registerServiceWorker from './registerServiceWorker';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
+import './styles/Index.css';
+
 
 import App from './App';
 
@@ -16,7 +18,6 @@ let initialState = {
         "type": "tattooers"
     },
     pieces: [],
-    // displayNext: false,
     newPiece: {}
 }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/NavBack.css';
+import '../styles/App.css';
 
 let NavBack = () => {
   return (
