@@ -9,7 +9,7 @@ import LoginForm from '../Components/LoginForm';
 
 let LoginScreen = () => {
   return (
-    <div>
+    <div className='login-screen'>
         <PublicHeader />
         <LoginForm />
         <Link to="/forgot">forgot password?</Link>
